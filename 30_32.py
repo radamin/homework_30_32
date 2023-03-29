@@ -8,6 +8,35 @@
 # Вывод: 7 9 11 13 15
 
 
-a1, d, n = (int(input("Enter separate numbers: ")) for _ in 'abc')
-M = [a1 + (i - 1) * d for i in range(1, n + 1)]
-print('Answer: ', * M)
+# a1, d, n = (int(input("Enter separate numbers: ")) for _ in 'abc')
+# M = [a1 + (i - 1) * d for i in range(1, n + 1)]
+# print('Answer: ', *M)
+
+# Задача 32: Определить индексы элементов массива (списка),
+# значения которых принадлежат заданному диапазону (т.е. не
+# меньше заданного минимума и не больше заданного
+# максимума)
+
+lst = [-5, 9, 0, 3, -1, -2, 1,
+       4, -2, 10, 2, 0, -9, 8, 10, -9,
+       0, -5, -5, 7]
+print("Изначальный список", lst)
+# диапазон элементов
+min = 0
+max = 10
+# составляем список из элементов диапазона
+lst_new = [i for i in lst if min <= i <= max]
+
+
+# выводим индексы нового списка
+
+
+def index_range(lst_new_range):
+    print("Выводим индексы диапазона: ")
+    for i in lst_new_range:
+        index = lst.index(i)
+        print(index, end=" ")
+
+
+print("Выводим элементы диапазона:", lst_new)
+index_range(lst_new)
